@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <header>
+    <h1>💸Expense Tracker💸</h1>
+  </header>
+
+  <main>
+    <!-- Expense Form -->
+    <section class="expense-form-container">
+      <form id="expense-form">
+        <input type="text" id="expense-name" placeholder="Expense Name" required />
+        <input type="number" id="expense-amount" placeholder="Amount" min="1" required />
+        <select id="expense-category" required>
+          <option value="" disabled selected>Select Category</option>
+          <option value="Food">🍔 Food</option>
+          <option value="Entertainment">🎬 Entertainment</option>
+          <option value="Travel">✈️ Travel</option>
+          <option value="Other">💡 Other</option>
+        </select>
+        <input type="date" id="expense-date" />
+        <button type="submit">Add Expense</button>
+      </form>
+    </section>
+
+    <!-- Date Sorting and Filter Section -->
+    <section class="filter-container">
+      <!-- Date Sorting Buttons -->
+      <button id="sort-asc" class="sort-btn">Sort by Date: Ascending</button>
+      <button id="sort-desc" class="sort-btn">Sort by Date: Descending</button>
+
+      <!-- Filter by Date or Date Range -->
+      <div class="filter-dates">
+        <input type="date" id="filter-start-date" placeholder="Start Date" />
+        <input type="date" id="filter-end-date" placeholder="End Date" />
+        <button id="apply-filter" class="filter-btn">Apply Filter</button>
+        <button id="reset-filter" class="filter-btn">Reset Filter</button>
+      </div>
+    </section>
+
+    <!-- Expense List and Total -->
+    <section class="expense-list-container">
+      <ul id="expense-list"></ul>
+      <div id="total-expenses">
+        Total Expenses: $<span id="total-amount">0</span>
+      </div>
+    </section>
+
+    <!-- Expense Summary by Category -->
+    <section class="expense-summary-container">
+      <h2>Summary of Expenses by Category</h2>
+      <ul id="expense-summary-list"></ul>
+
+      <!-- Chart Container for Visual Pie Chart -->
+      <canvas id="expenseChart"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Creative Expense Tracker. All rights reserved.</p>
+  </footer>
+
+  <!-- Add Chart.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

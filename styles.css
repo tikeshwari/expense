@@ -1,0 +1,282 @@
+/* Reset and global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #d3ffda; /* Dark blue */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #0194b5; /* Dark cyan/teal */
+  color: #122dc5;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.5s ease-in-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* Main container */
+main {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+/* Expense Form Styles */
+.expense-form-container {
+  background-color: #46b1c2; /* Light blue */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#expense-form input, #expense-form select {
+  padding: 0.9rem;
+  border: 1px solid #00CFFF; /* Cyan */
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#expense-form button {
+  padding: 0.9rem;
+  background-color: #05c7f3; /* Cyan */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#expense-form button:hover {
+  background-color: #00748E; /* Dark cyan/teal */
+}
+
+/* Expense List Styles */
+.expense-list-container {
+  background-color: #46b1c2; /* Light blue */
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#expense-list {
+  list-style: none;
+  margin-bottom: 20px;
+  padding: 0;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+#expense-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#expense-list li:last-child {
+  border-bottom: none;
+}
+
+.edit-btn, .delete-btn {
+  background-color: #00748E; /* Dark cyan/teal */
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+  background-color: #00CFFF; /* Cyan */
+}
+
+#total-expenses {
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #FFFFFF;
+}
+
+/* Additional styles for Sorting Buttons */
+.sort-container {
+  display: flex;
+  justify-content: center;
+  margin: 15px 15px;
+}
+
+.sort-btn {
+  background-color: #1DB5D0; 
+  color: white;
+  padding: 10px 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sort-btn:hover {
+  background-color: #00CFFF; 
+}
+
+.sort-btn:focus {
+  outline: none;
+}
+
+/* Additional styles for Date Range Filter */
+.filter-container {
+  justify-content: space-around;
+  align-items: center;
+  margin: 15px 15px;
+}
+
+.filter-dates input {
+  padding: 8px;
+  margin: 5px;
+  border: 1px solid #00CFFF; /* Cyan */
+  border-radius: 5px;
+}
+
+.filter-btn {
+  background-color: #00CFFF; /* Cyan */
+  color: white;
+  padding: 8px 16px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  background-color: #00748E; /* Dark cyan/teal */
+}
+
+/* Additional styles for Summary Section */
+.expense-summary-container {
+  background-color: #46b1c2;/* Light blue */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.expense-summary-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #FFFFFF;
+}
+
+#expense-summary-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#expense-summary-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#expense-summary-list li:last-child {
+  border-bottom: none;
+}
+
+canvas {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  font-size: 0.9rem;
+  color: #ce1111;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #expense-form input, #expense-form select, #expense-form button {
+    font-size: 0.9rem;
+  }
+
+  #total-expenses {
+    font-size: 1rem;
+  }
+
+  /* Stack buttons vertically on small screens */
+  #expense-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .edit-btn, .delete-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+  /* Additional styling to make the filter and sort buttons stack */
+  .filter-container,
+  .sort-container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .sort-btn, .filter-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
